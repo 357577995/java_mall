@@ -10,7 +10,7 @@
         </c:if>
 
         $("form.loginForm").submit(function () {
-            if (0 == $("#name").val().length || 0 == $("#password").val().length) {
+            if (0 == $("#admin_name").val().length || 0 == $("#admin_password").val().length) {
                 $("span.errorMessage").html("请输入账号密码");
                 $("div.loginErrorMessageDiv").show();
                 return false;
@@ -49,19 +49,19 @@
                 <span class="loginInputIcon ">
                     <span class=" glyphicon glyphicon-user"></span>
                 </span>
-                <input id="name" name="name" placeholder="手机/会员名/邮箱" type="text">
+                <input id="admin_name" name="name" placeholder="手机/会员名/邮箱" type="text">
             </div>
 
             <div class="loginInput ">
                 <span class="loginInputIcon ">
                     <span class=" glyphicon glyphicon-lock"></span>
                 </span>
-                <input id="password" name="password" type="password" placeholder="密码" type="text">
+                <input id="admin_password" name="password" type="password" placeholder="密码" type="text">
             </div>
             <div class="loginInput " style="height: auto">
 
                 <input id="checks" name="checks" class="input-text size-L" type="text" value="验证码:" style="width:150px;"/>
-                <img id="imgVerify" src=""/><a href="" rel="nofollow">看不清，换一张</a>
+                <img id="imgVerify" src="/tmall_ssm/admin_getVerify"/><a href="" rel="nofollow">看不清，换一张</a>
 
             </div>
             <span class="text-danger">不要输入真实的天猫账号密码</span><br><br>
@@ -80,7 +80,7 @@
 <script type="text/javascript">
     $(document.body).ready(function () {
         //首次获取验证码
-        $("#imgVerify").attr("src","/admin_getVerify?"+Math.random());
+        $("#imgVerify").attr("src","/tmall_ssm/admin_getVerify?"+Math.random());
     });
     //获取验证码
     function getVerify(){
@@ -100,8 +100,8 @@
     }
     //登录验证
     function doLogin() {
-        var userName=document.getElementById('name').value;
-        var password=document.getElementById('password').value;
+        var userName=document.getElementById('admin_name').value;
+        var password=document.getElementById('admin_password').value;
         if(null==userName||null==password||""==userName||""==password){
             alert('用户名或密码不能为空!');
         }else {

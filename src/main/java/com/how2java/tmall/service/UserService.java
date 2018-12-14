@@ -13,7 +13,7 @@ public interface UserService {
 
     User get(int id);
 
-    List list();
+    List<User> list();
 
     boolean isEXist(String user_name);
 

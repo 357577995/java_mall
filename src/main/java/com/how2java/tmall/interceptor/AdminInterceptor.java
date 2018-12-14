@@ -41,18 +41,17 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 
         String uri = request.getRequestURI();
         uri = StringUtils.remove(uri, contextPath);
-//        System.out.println(uri);
-        if (uri.startsWith("/admin_")) {
-            String method = StringUtils.substringAfterLast(uri, "/admin_");
-            if (!Arrays.asList(noNeedAuthPage).contains(method)) {
-                Admin admin = (Admin) session.getAttribute("admin");
-                if (null == admin) {
-                    response.sendRedirect("amdinLogin");
-                    return false;
-                }
-
-            }
-        }
+//        if (uri.startsWith("/admin_")) {
+//            String method = StringUtils.substringAfterLast(uri, "/admin_");
+//            if (!Arrays.asList(noNeedAuthPage).contains(method)) {
+//                Admin admin = (Admin) session.getAttribute("admin");
+//                if (null == admin) {
+//                    response.sendRedirect("adminLogin");
+//                    return false;
+//                }
+//
+//            }
+//        }
 
         return true;
 

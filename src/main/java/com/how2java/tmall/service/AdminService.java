@@ -1,21 +1,23 @@
 package com.how2java.tmall.service;
 
-import com.how2java.tmall.pojo.Admin;
-
 import java.util.List;
 
+import com.how2java.tmall.pojo.Admin;
+
 public interface AdminService {
-    void add(Admin u);
+	void add(Admin u);
 
-    void delete(int id);
+	void delete(int id);
 
-    void update(Admin u);
+	void update(Admin u);
 
-    Admin get(int id);
+	Admin get(int id);
 
-    List list();
+	List<Admin> list();
 
-    boolean isEXist(String user_name);
+	boolean isEXist(String user_name);
 
-    Admin get(String username, String password);
+	Admin get(String username, String password);
+
+	Admin getByName(String userName);
 }

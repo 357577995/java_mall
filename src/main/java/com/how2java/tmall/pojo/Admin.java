@@ -1,51 +1,71 @@
 package com.how2java.tmall.pojo;
 
 public class Admin {
-    private Integer id;
+	private Integer id;
 
-    private String name;
+	private String name;
 
-    private String password;
+	private String password;
 
-    public Integer getId() {
-        return id;
-    }
+	private String salt;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private String role_name;
 
-    public String getName() {
-        return name;
-    }
+	public String getRole_name() {
+		return role_name;
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public void setRole_name(String role_name) {
+		this.role_name = role_name;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getSalt() {
+		return salt;
+	}
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 
-    public String getAnonymousName(){
-        if(null==name)
-            return null;
+	public Integer getId() {
+		return id;
+	}
 
-        if(name.length()<=1)
-            return "*";
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-        if(name.length()==2)
-            return name.substring(0,1) +"*";
+	public String getName() {
+		return name;
+	}
 
-        char[] cs =name.toCharArray();
-        for (int i = 1; i < cs.length-1; i++) {
-            cs[i]='*';
-        }
-        return new String(cs);
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    }
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password == null ? null : password.trim();
+	}
+
+	public String getAnonymousName() {
+		if (null == name)
+			return null;
+
+		if (name.length() <= 1)
+			return "*";
+
+		if (name.length() == 2)
+			return name.substring(0, 1) + "*";
+
+		char[] cs = name.toCharArray();
+		for (int i = 1; i < cs.length - 1; i++) {
+			cs[i] = '*';
+		}
+		return new String(cs);
+
+	}
 }

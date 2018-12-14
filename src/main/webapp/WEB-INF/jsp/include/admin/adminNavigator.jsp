@@ -10,5 +10,6 @@
 		<a class="navbar-brand" href="user_list">用户管理</a>
 		<a class="navbar-brand" href="admin_order_list">订单管理</a>
 		<a class="navbar-brand" href="admin_user_list">管理员管理</a>
+		<a class="navbar-brand" href="admin_role_list">角色管理</a>
 	</nav>
 </div>
